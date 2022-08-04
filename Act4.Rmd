@@ -1,0 +1,47 @@
+---
+title: "Activity3"
+author: "Guillermo Romero"
+date: "2022-08-04"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+```{r}
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+
+```{r, eval=FALSE}
+ggpairs(diamonds) 
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point()
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram()
+```
+
+Create a new R Markdown document in your project, save as `r-exploring``
+Attach the tidyverse, skimr, and GGally packages in the setup code chunk
+Run View(diamonds) in the Console to look at the built-in diamonds dataset in R
+Explore the dataset using the functions names(), dim(), summary(), head(), tail(), and skimr::skim()
+Create a pairs plot using ggpairs()
+Create a basic ggplot scatterplot of diamond price (price) as a function of size (carat)
+Create a histogram showing the distribution of values in the carat column (recall: a histogram only requires a single variable, e.g. aes(x = carat))
+Save, stage, commit, pull, then push your changes back to your repo in RStudio using the GUI interface (buttons)
+Create a jitterplot (see: geom_jitter) of diamond clarity (on the x-axis) and price (y-axis).
+Using git commands in the Terminal, stage, commit, & push changes
